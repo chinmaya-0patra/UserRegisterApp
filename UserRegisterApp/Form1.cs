@@ -66,7 +66,7 @@ namespace UserRegisterApp
             {
                 SqlConnection con = new SqlConnection("Data Source=CHINMAYA-PATRA\\SQLEXPRESS;Initial Catalog=RegisterForm;Integrated Security=True;TrustServerCertificate=True");
                 con.Open();
-                string insertQ = "INSERT INTO UserData VAlUES(@fname, @lname, @dob, @gender, @mail, @username, @pass, @phone, @country)";
+                string insertQ = "INSERT INTO UserData VAlUES(@fname, @lname, @dob, @gender, @mail, @phone, @username, @pass, @country)";
                 SqlCommand cmd = new SqlCommand(insertQ, con);
                 cmd.Parameters.AddWithValue("@fname", txtFname.Text);
                 cmd.Parameters.AddWithValue("@lname", txtLname.Text);
@@ -80,6 +80,13 @@ namespace UserRegisterApp
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registration Successful!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginPage lgp = new LoginPage();
+            lgp.Show();
         }
     }
 }

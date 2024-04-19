@@ -248,6 +248,7 @@
             this.btnLog.TabIndex = 20;
             this.btnLog.Text = "Login";
             this.btnLog.UseVisualStyleBackColor = true;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // Form1
             // 
